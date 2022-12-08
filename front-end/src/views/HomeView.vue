@@ -1,14 +1,19 @@
 <template>
   <div class="home-content">
     <div class="d-flex">
-      <span>teste</span>
+      <Header></Header>
     </div>
   </div>
 </template>
 
 <script>
+import Header from '../components/Header.vue'
+
 export default {
 name: 'home-view',
+components: {
+  Header,
+}
 };
 </script>
 
