@@ -8,7 +8,7 @@
       <span>Contato</span>
     </div>
     <div class="img-content">
-      <img alt="Vue logo" class="logo" src="@/assets/feather-search.svg" >
+      <img class="search" src="@/assets/feather-search.svg" >
     </div>
   </div>
 </template>
@@ -34,7 +34,7 @@ name: 'home-view',
   margin-right: 1rem;
   color: #575756;
   opacity: 1;
-  font-size: 16px;
+  font-size: 14px;
 }
 .header-content img {
   width: 19px;
@@ -53,6 +53,9 @@ name: 'home-view',
   .header-content img {
     width: 19px;
     margin: 0 16.75rem 0 2rem;
+  }
+  .header-content span {
+    font-size: 16px;
   }
 }
 @media (min-width: 1920px) {
