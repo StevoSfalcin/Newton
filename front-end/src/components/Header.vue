@@ -1,14 +1,13 @@
 <template>
   <div class="header-content">
-    <div>
-    </div>
+    <div></div>
     <div>
       <span>Quem somos</span>
       <span>Equipe</span>
       <span>Espaço</span>
       <span>Contato</span>
     </div>
-    <div>
+    <div class="img-content">
       <img alt="Vue logo" class="logo" src="@/assets/feather-search.svg" >
     </div>
   </div>
@@ -38,9 +37,13 @@ name: 'home-view',
   font-size: 16px;
 }
 .header-content img {
-    width: 19px;
-    margin-right: 0.5rem;
-  }
+  width: 19px;
+  margin-right: 0.5rem;
+}
+.img-content {
+  display: flex;
+  align-items: center;
+}
 
 @media (min-width: 1024px) {
   .header-content {
@@ -49,7 +52,12 @@ name: 'home-view',
   }
   .header-content img {
     width: 19px;
-    margin: 0 3rem 0 2rem;
+    margin: 0 16.75rem 0 2rem;
+  }
+}
+@media (min-width: 1920px) {
+  .header-content img {
+    margin: 0 24.75rem 0 2rem;
   }
 }
 
