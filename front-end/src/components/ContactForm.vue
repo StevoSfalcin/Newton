@@ -12,9 +12,11 @@
             <input type="text" class="form-control fill-heigt" placeholder="Mensagem" v-model="message">
           </div>
         </div>
-        <div>
-          <div class="send-button" @click="sendEmail()">Enviar</div>
+        <div class="d-block">
+          <div class="send-button mb-2" @click="sendEmail()">Enviar</div>
+          <span v-if="alert.status">{{ alert.message }}</span>
         </div>
+
       </div>
     </div>
   </div>
@@ -31,6 +33,10 @@ data() {
     email: '',
     subject: '',
     message: '',
+    alert: {
+      status: false,
+      message: '',
+    },
   }
 },
 watch: {
@@ -50,17 +56,25 @@ watch: {
 },
 methods: {
   sendEmail() {
-    axios
-      .post('http://127.0.0.1:8001/api', {
+    if (this.name && this.email && this.subject && this.message) {
+      axios
+      .post('http://127.0.0.1:8001/api/send-email', {
         name: this.name,
         email: this.email,
         subject: this.subject,
         message: this.message
       }).then((response) => {
-        console.log(response)
+        if (response.statusCode == 200) {
+          this.alert.status = true;
+          this.alert.message = 'Mensagem enviada com sucesso';
+        }
       })
+    } else {
+      this.alert.status = true;
+      this.alert.message = 'Preencha todos os campos';
     }
   }
+}
 };
 </script>
 
