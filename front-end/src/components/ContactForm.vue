@@ -13,7 +13,7 @@
           </div>
         </div>
         <div>
-          <div class="send-button">Enviar</div>
+          <div class="send-button" @click="sendEmail()">Enviar</div>
         </div>
       </div>
     </div>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
 name: 'contact-form',
@@ -47,6 +48,19 @@ watch: {
     this.message = val.replace(/[^a-zA-Z0-9,!,?.-]/g, "");
   },
 },
+methods: {
+  sendEmail() {
+    axios
+      .post('http://127.0.0.1:8001/api', {
+        name: this.name,
+        email: this.email,
+        subject: this.subject,
+        message: this.message
+      }).then((response) => {
+        console.log(response)
+      })
+    }
+  }
 };
 </script>
 
