@@ -1,6 +1,6 @@
 <template>
   <div class="contact-form-content t">
-    <div class="card-form shadow-lg d-flex">
+    <div class="card-form shadow-sm d-flex">
       <div class="card-inputs">
         <div>
           <div class="mb-1">
@@ -16,7 +16,6 @@
           <div class="send-button mb-2" @click="sendEmail()">Enviar</div>
           <span v-if="alert.status">{{ alert.message }}</span>
         </div>
-
       </div>
     </div>
   </div>
@@ -64,7 +63,12 @@ methods: {
         subject: this.subject,
         message: this.message
       }).then((response) => {
-        if (response.statusCode == 200) {
+        console.log(response);
+        if (response.status == 200) {
+          this.name = '',
+          this.email = '',
+          this.subject = '',
+          this.message = '',
           this.alert.status = true;
           this.alert.message = 'Mensagem enviada com sucesso';
         }
@@ -103,6 +107,7 @@ methods: {
   margin-top: 0.4rem;
 }
 .send-button {
+  cursor: pointer;
   width: 5.5rem;
   height: 1.9rem;
   font-size: 14px;
@@ -125,11 +130,6 @@ methods: {
     height: 90%;
     margin-left: 10px;
     margin-top: 0.4rem;
-  }
-}
-@media (min-width: 1920px) {
-  .header-content img {
-    margin: 0 24.75rem 0 2rem;
   }
 }
 

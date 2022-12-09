@@ -62,6 +62,7 @@ components: {
 @media (min-width: 1024px) {
   .contact-header {
     margin: 0 30rem;
+    padding: 0 5rem 1.2rem 0;
   }
   .contact-header img {
     width: 1rem;

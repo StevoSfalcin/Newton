@@ -86,9 +86,6 @@ name: 'carousel',
   }
 }
 @media (min-width: 1920px) {
-  .header-content img {
-    margin: 0 24.75rem 0 2rem;
-  }
   .span-text-content {
   font-size: 50px;
   }

@@ -60,7 +60,7 @@ components: {
 <style scoped>
 .symbol-details {
   max-width: 15rem;
-  bottom: 15px;
+  bottom: 45px;
 }
 .company-details-content {
   width: 100%;
@@ -125,6 +125,10 @@ components: {
     color: #FFFFFF;
     margin: 1rem 0;
   }
+  .symbol-details {
+  max-width: 35rem;
+  bottom: 45px;
+}
 }
 @media (min-width: 1920px) {
   .header-content img {
